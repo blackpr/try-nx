@@ -2,6 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "core-data": "libs/core-data",
     "moviesdb": "apps/moviesdb",
     "moviesdb-e2e": "apps/moviesdb-e2e"
   }
