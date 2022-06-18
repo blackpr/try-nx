@@ -1,0 +1,86 @@
+{
+  "projectType": "application",
+  "sourceRoot": "apps/moviesdb/src",
+  "prefix": "tim",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/moviesdb",
+        "index": "apps/moviesdb/src/index.html",
+        "main": "apps/moviesdb/src/main.ts",
+        "polyfills": "apps/moviesdb/src/polyfills.ts",
+        "tsConfig": "apps/moviesdb/tsconfig.app.json",
+        "assets": ["apps/moviesdb/src/favicon.ico", "apps/moviesdb/src/assets"],
+        "styles": ["apps/moviesdb/src/styles.css"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/moviesdb/src/environments/environment.ts",
+              "with": "apps/moviesdb/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "moviesdb:build:production"
+        },
+        "development": {
+          "browserTarget": "moviesdb:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "moviesdb:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["apps/moviesdb/**/*.ts", "apps/moviesdb/**/*.html"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/moviesdb"],
+      "options": {
+        "jestConfig": "apps/moviesdb/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
