@@ -1,0 +1,25 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/ui-toolbar/src",
+  "prefix": "tim",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/ui-toolbar"],
+      "options": {
+        "jestConfig": "libs/ui-toolbar/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/ui-toolbar/**/*.ts",
+          "libs/ui-toolbar/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

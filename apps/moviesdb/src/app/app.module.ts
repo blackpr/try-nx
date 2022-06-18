@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreDataModule } from '@tim/core-data';
 import { CoreStateModule } from '@tim/core-state';
 import { MaterialModule } from '@tim/material';
+import { UiToolbarModule } from '@tim/ui-toolbar';
 import { RoutingModule } from './routing.module';
 
 @NgModule({
@@ -18,6 +19,7 @@ import { RoutingModule } from './routing.module';
     CoreStateModule,
     MaterialModule,
     RoutingModule,
+    UiToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

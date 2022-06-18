@@ -7,6 +7,7 @@
     "core-state": "libs/core-state",
     "material": "libs/material",
     "moviesdb": "apps/moviesdb",
-    "moviesdb-e2e": "apps/moviesdb-e2e"
+    "moviesdb-e2e": "apps/moviesdb-e2e",
+    "ui-toolbar": "libs/ui-toolbar"
   }
 }
