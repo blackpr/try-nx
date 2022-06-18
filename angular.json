@@ -5,6 +5,7 @@
     "api-interfaces": "libs/api-interfaces",
     "core-data": "libs/core-data",
     "core-state": "libs/core-state",
+    "material": "libs/material",
     "moviesdb": "apps/moviesdb",
     "moviesdb-e2e": "apps/moviesdb-e2e"
   }

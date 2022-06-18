@@ -18,7 +18,8 @@
       "@env/*": ["apps/moviesdb/src/environments/*"],
       "@tim/api-interfaces": ["libs/api-interfaces/src/index.ts"],
       "@tim/core-data": ["libs/core-data/src/index.ts"],
-      "@tim/core-state": ["libs/core-state/src/index.ts"]
+      "@tim/core-state": ["libs/core-state/src/index.ts"],
+      "@tim/material": ["libs/material/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
