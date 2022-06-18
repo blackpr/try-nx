@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@env/*": ["apps/moviesdb/src/environments/*"],
-      "@tim/core-data": ["libs/core-data/src/index.ts"]
+      "@tim/core-data": ["libs/core-data/src/index.ts"],
+      "@tim/core-state": ["libs/core-state/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

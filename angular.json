@@ -3,6 +3,7 @@
   "version": 2,
   "projects": {
     "core-data": "libs/core-data",
+    "core-state": "libs/core-state",
     "moviesdb": "apps/moviesdb",
     "moviesdb-e2e": "apps/moviesdb-e2e"
   }
