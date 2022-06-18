@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreDataModule } from '@tim/core-data';
 import { CoreStateModule } from '@tim/core-state';
 import { MaterialModule } from '@tim/material';
+import { RoutingModule } from './routing.module';
 
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent],
@@ -16,6 +17,7 @@ import { MaterialModule } from '@tim/material';
     CoreDataModule,
     CoreStateModule,
     MaterialModule,
+    RoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
