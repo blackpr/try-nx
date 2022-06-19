@@ -9,9 +9,12 @@ import { CoreStateModule } from '@tim/core-state';
 import { MaterialModule } from '@tim/material';
 import { UiToolbarModule } from '@tim/ui-toolbar';
 import { RoutingModule } from './routing.module';
+import { LoginComponent } from './login/login.component';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, NxWelcomeComponent],
+  declarations: [AppComponent, NxWelcomeComponent, LoginComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -20,6 +23,8 @@ import { RoutingModule } from './routing.module';
     MaterialModule,
     RoutingModule,
     UiToolbarModule,
+    RouterModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
