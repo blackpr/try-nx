@@ -19,7 +19,7 @@ export class AuthService {
   login(_userInfo: UserInfo) {
     this.setIsAuthenticated(true);
     this.isAuthenticated.next(true);
-    this.router.navigateByUrl('/movies');
+    this.router.navigateByUrl('/movies/list');
   }
 
   logout() {
@@ -29,7 +29,7 @@ export class AuthService {
   }
 
   private getIsAuthenticated(): boolean {
-    return JSON.parse(localStorage.getItem(AUTHENTICATION_KEY) || '{}');
+    return JSON.parse(localStorage.getItem(AUTHENTICATION_KEY) || 'false');
   }
 
   private setIsAuthenticated(isAuthenticated: boolean) {
