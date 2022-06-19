@@ -12,6 +12,7 @@ import { RoutingModule } from './routing.module';
 import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent, LoginComponent],
@@ -25,6 +26,7 @@ import { FormsModule } from '@angular/forms';
     UiToolbarModule,
     RouterModule,
     FormsModule,
+    FlexLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
