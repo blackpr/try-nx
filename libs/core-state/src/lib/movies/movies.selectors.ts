@@ -1,37 +1,52 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { Movie } from '@tim/api-interfaces';
 import { MOVIES_FEATURE_KEY, State, moviesAdapter } from './movies.reducer';
 
 // Lookup the 'Movies' feature state managed by NgRx
-export const getMoviesState = createFeatureSelector<State>(MOVIES_FEATURE_KEY);
+export const selectMoviesState =
+  createFeatureSelector<State>(MOVIES_FEATURE_KEY);
 
 const { selectAll, selectEntities } = moviesAdapter.getSelectors();
 
-export const getMoviesLoaded = createSelector(
-  getMoviesState,
+export const selectMoviesLoaded = createSelector(
+  selectMoviesState,
   (state: State) => state.loaded
 );
 
-export const getMoviesError = createSelector(
-  getMoviesState,
+export const selectMoviesError = createSelector(
+  selectMoviesState,
   (state: State) => state.error
 );
 
-export const getAllMovies = createSelector(getMoviesState, (state: State) =>
-  selectAll(state)
+export const selectAllMovies = createSelector(
+  selectMoviesState,
+  (state: State) => selectAll(state)
 );
 
-export const getMoviesEntities = createSelector(
-  getMoviesState,
+export const selectMoviesEntities = createSelector(
+  selectMoviesState,
   (state: State) => selectEntities(state)
 );
 
+// eslint-disable-next-line ngrx/prefix-selectors-with-select
 export const getSelectedId = createSelector(
-  getMoviesState,
+  selectMoviesState,
   (state: State) => state.selectedId
 );
 
+const emptyMovie: Movie = {
+  id: '',
+  Title: '',
+  Year: '',
+  Genre: '',
+  Director: '',
+  Poster: '',
+  imdbRating: '',
+};
+
+// eslint-disable-next-line ngrx/prefix-selectors-with-select
 export const getSelected = createSelector(
-  getMoviesEntities,
+  selectMoviesEntities,
   getSelectedId,
-  (entities, selectedId) => (selectedId ? entities[selectedId] : undefined)
+  (entities, selectedId) => (selectedId ? entities[selectedId] : emptyMovie)
 );

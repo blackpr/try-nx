@@ -1,27 +1,64 @@
 import { Injectable } from '@angular/core';
 import { createEffect, Actions, ofType } from '@ngrx/effects';
-import { fetch } from '@nrwl/angular';
+import { fetch, pessimisticUpdate } from '@nrwl/angular';
+import { Movie } from '@tim/api-interfaces';
+import { MoviesService } from '@tim/core-data';
+import { map } from 'rxjs/operators';
 
 import * as MoviesActions from './movies.actions';
 import * as MoviesFeature from './movies.reducer';
 
 @Injectable()
 export class MoviesEffects {
-  init$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(MoviesActions.init),
+  loadMovies$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(MoviesActions.loadMovies),
       fetch({
-        run: (action) => {
-          // Your custom service 'load' logic goes here. For now just return a success action...
-          return MoviesActions.loadMoviesSuccess({ movies: [] });
-        },
-        onError: (action, error) => {
-          console.error('Error', error);
-          return MoviesActions.loadMoviesFailure({ error });
-        },
+        run: (action) =>
+          this.moviesService
+            .all()
+            .pipe(
+              map((movies: Movie[]) =>
+                MoviesActions.loadMoviesSuccess({ movies })
+              )
+            ),
+        onError: (action, error) => MoviesActions.loadMoviesFailure({ error }),
       })
-    )
-  );
+    );
+  });
 
-  constructor(private readonly actions$: Actions) {}
+  loadMovie$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(MoviesActions.loadMovie),
+      fetch({
+        run: (action) =>
+          this.moviesService
+            .find(action.movieId)
+            .pipe(
+              map((movie: Movie) => MoviesActions.loadMovieSuccess({ movie }))
+            ),
+        onError: (action, error) => MoviesActions.loadMovieFailure({ error }),
+      })
+    );
+  });
+
+  updateMovie$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(MoviesActions.updateMovie),
+      pessimisticUpdate({
+        run: (action) =>
+          this.moviesService.update(action.movie).pipe(
+            map((movie: Movie) => {
+              return MoviesActions.updateMovieSuccess({ movie });
+            })
+          ),
+        onError: (action, error) => MoviesActions.updateMovieFailure({ error }),
+      })
+    );
+  });
+
+  constructor(
+    private readonly actions$: Actions,
+    private moviesService: MoviesService
+  ) {}
 }

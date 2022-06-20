@@ -1,13 +1,19 @@
 import { Action } from '@ngrx/store';
+import { Movie } from '@tim/api-interfaces';
 
 import * as MoviesActions from './movies.actions';
 import { MoviesEntity } from './movies.models';
 import { State, initialState, reducer } from './movies.reducer';
 
 describe('Movies Reducer', () => {
-  const createMoviesEntity = (id: string, name = ''): MoviesEntity => ({
+  const createMoviesEntity = (id: string): Movie => ({
     id,
-    name: name || `name-${id}`,
+    Title: 'fake-Title',
+    Year: 'fake-Year',
+    Genre: 'fake-Genre',
+    Director: 'fake-Director',
+    Poster: 'fake-Poster',
+    imdbRating: 'fake-imdbRating',
   });
 
   describe('valid Movies actions', () => {

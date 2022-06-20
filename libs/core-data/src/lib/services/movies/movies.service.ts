@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Movie } from '@tim/api-interfaces';
 import { environment } from '@env/environment';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
@@ -23,7 +24,7 @@ export class MoviesService {
   }
 
   update(movie: Movie) {
-    return this.http.put(this.getUrlWithId(movie.id), movie);
+    return this.http.put<Movie>(this.getUrlWithId(movie.id), movie);
   }
 
   delete(movie: Movie) {
