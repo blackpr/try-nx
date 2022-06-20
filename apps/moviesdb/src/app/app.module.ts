@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { NxWelcomeComponent } from './nx-welcome.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CoreDataModule } from '@tim/core-data';
+// import { CoreDataModule } from '@tim/core-data';
 import { CoreStateModule } from '@tim/core-state';
 import { MaterialModule } from '@tim/material';
 import { UiToolbarModule } from '@tim/ui-toolbar';
@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LayoutComponent } from './layout/layout.component';
 import { SideNavComponent } from './layout/side-nav/side-nav.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { SideNavComponent } from './layout/side-nav/side-nav.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    CoreDataModule,
+    // CoreDataModule,
     CoreStateModule,
     MaterialModule,
     RoutingModule,
@@ -35,6 +36,7 @@ import { SideNavComponent } from './layout/side-nav/side-nav.component';
     RouterModule,
     FormsModule,
     FlexLayoutModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
