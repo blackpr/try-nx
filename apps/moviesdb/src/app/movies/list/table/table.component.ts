@@ -19,7 +19,7 @@ import { Movie } from '@tim/api-interfaces';
 })
 export class TableComponent implements OnInit, AfterViewInit {
   @Input() movies!: Movie[] | null;
-  displayedColumns = ['id', 'title', 'director', 'genre'];
+  displayedColumns = ['id', 'Title', 'Director', 'Genre'];
   dataSource!: MatTableDataSource<Movie>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
