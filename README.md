@@ -11,6 +11,7 @@
 - [How to create shared data services](libs/core-data)
 - [How to create shared state business logic using NgRx](libs/core-state)
 - [How to lazy load modules](apps/moviesdb/src/app/routing.module.ts)
+- [How to create custom pipe](apps/moviesdb/src/app/shared/pipes/list-format.pipe.ts)
 
 also there are sample components for
 
