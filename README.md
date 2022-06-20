@@ -16,7 +16,6 @@ also there are sample components for
 
 - [layout](apps/moviesdb/src/app/layout)
 - [login](apps/moviesdb/src/app/login)
-- [layout](apps/moviesdb/src/app/layout)
 - [mat-table](apps/moviesdb/src/app/movies/list/table)
 
 ## Serve the project:
