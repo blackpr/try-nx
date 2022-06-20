@@ -1,1 +1,5 @@
-<router-outlet></router-outlet>
+<router-outlet *ngIf="currentPath === '/login'; else elseBlock"></router-outlet>
+
+<ng-template #elseBlock>
+  <tim-layout></tim-layout>
+</ng-template>

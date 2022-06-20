@@ -13,9 +13,17 @@ import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { LayoutComponent } from './layout/layout.component';
+import { SideNavComponent } from './layout/side-nav/side-nav.component';
 
 @NgModule({
-  declarations: [AppComponent, NxWelcomeComponent, LoginComponent],
+  declarations: [
+    AppComponent,
+    NxWelcomeComponent,
+    LoginComponent,
+    LayoutComponent,
+    SideNavComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

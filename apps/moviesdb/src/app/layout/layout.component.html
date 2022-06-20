@@ -1,0 +1,15 @@
+<div class="layout-container">
+  <tim-toolbar (toggleSidenav)="snav.toggle()"></tim-toolbar>
+
+  <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="toolBarHeight">
+    <mat-sidenav #snav class="sidenav mat-elevation-z10" [mode]="sideNavMode" [(opened)]="sideNavOpened">
+      <tim-side-nav></tim-side-nav>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <main class="main-container">
+        <router-outlet></router-outlet>
+      </main>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+<p>layout works!</p>

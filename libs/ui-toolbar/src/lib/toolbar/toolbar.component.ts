@@ -1,12 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'tim-toolbar',
   templateUrl: './toolbar.component.html',
-  styleUrls: ['./toolbar.component.css'],
+  styleUrls: ['./toolbar.component.scss'],
 })
-export class ToolbarComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
+export class ToolbarComponent {
+  @Output() logout = new EventEmitter();
+  @Output() toggleSidenav = new EventEmitter();
 }
