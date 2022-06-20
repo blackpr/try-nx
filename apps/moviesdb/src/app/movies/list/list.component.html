@@ -1,1 +1,9 @@
-<tim-list-table [movies]="allMovies$ | async"></tim-list-table>
+<!-- <div *ngIf="allMovies$ | async as movies; else loading"> -->
+<div *ngIf="(loaded$ | async); else loading">
+  <tim-list-table [movies]="allMovies$ | async"></tim-list-table>
+</div>
+<!-- </div> -->
+
+<ng-template #loading>
+  <div>Loading ...</div>
+</ng-template>

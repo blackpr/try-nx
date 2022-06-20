@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class ListComponent implements OnInit {
   allMovies$: Observable<Movie[]> = this.moviesFacade.allMovies$;
+  loaded$: Observable<boolean> = this.moviesFacade.loaded$;
 
   constructor(private moviesFacade: MoviesFacade) {}
 
