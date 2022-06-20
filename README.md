@@ -1,20 +1,27 @@
 # MoviesDB learning nx
 
-This is an overengineered Angular project and it was generated using [Nx](https://nx.dev).
+## ~~This is an overengineered Angular project and it was generated using [Nx](https://nx.dev)~~
+
+## This is an example project on how to structure large projects with multiple apps and shared functionality using [Nx](https://nx.dev)
+
+- [How to use service with BehaviorSubject](apps/moviesdb/src/app/shared/services/auth.service.ts)
+- [How to use service with a Guard](apps/moviesdb/src/app/shared/guards/auth.guard.ts)
+- [How to create interfaces](libs/api-interfaces)
+- [How to create shared ui modules](libs/ui-toolbar)
+- [How to create shared data services](libs/core-data)
+- [How to create shared state business logic using NgRx](libs/core-data)
+- [How to lazy load modules](apps/moviesdb/src/app/routing.module.ts)
+
+also there are sample components for
+
+- [layout](apps/moviesdb/src/app/layout)
+- [login](apps/moviesdb/src/app/login)
+- [layout](apps/moviesdb/src/app/layout)
+- [mat-table](apps/moviesdb/src/app/movies/list/table)
 
 ## Serve the project:
 
 `npm run serve:all`
-
-🔎 **NX DOC: Smart, Fast and Extensible Build System**
-
-## Quick Start & Documentation
-
-[Nx Documentation](https://nx.dev/angular)
-
-[10-minute video showing all Nx features](https://nx.dev/getting-started/intro)
-
-[Interactive Tutorial](https://nx.dev/react-tutorial/01-create-application)
 
 ## Adding capabilities to your workspace
 
