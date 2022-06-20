@@ -9,7 +9,7 @@
 - [How to create interfaces](libs/api-interfaces)
 - [How to create shared ui modules](libs/ui-toolbar)
 - [How to create shared data services](libs/core-data)
-- [How to create shared state business logic using NgRx](libs/core-data)
+- [How to create shared state business logic using NgRx](libs/core-state)
 - [How to lazy load modules](apps/moviesdb/src/app/routing.module.ts)
 
 also there are sample components for
